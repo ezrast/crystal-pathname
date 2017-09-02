@@ -463,11 +463,11 @@ struct Pathname
 end
 
 class File
-  def self.basename(path : Pathname)
+  def self.basename(path : Pathname) : String
     self.basename(path.to_s)
   end
 
-  def self.basename(path : Pathname, suffix)
+  def self.basename(path : Pathname, suffix) : String
     self.basename(path.to_s, suffix)
   end
 
@@ -475,11 +475,11 @@ class File
     self.delete(path.to_s)
   end
 
-  def self.directory?(path : Pathname)
+  def self.directory?(path : Pathname) : Bool
     self.directory?(path.to_s)
   end
 
-  def self.dirname(path : Pathname)
+  def self.dirname(path : Pathname) : String
     self.dirname(path.to_s)
   end
 
@@ -489,23 +489,23 @@ class File
     end
   end
 
-  def self.executable?(path : Pathname)
+  def self.executable?(path : Pathname) : Bool
     self.executable?(path.to_s)
   end
 
-  def self.exists?(path : Pathname)
+  def self.exists?(path : Pathname) : Bool
     self.exists?(path.to_s)
   end
 
-  def self.expand_path(path : Pathname, dir = nil)
+  def self.expand_path(path : Pathname, dir = nil) : String
     self.expand_path(path.to_s, dir)
   end
 
-  def self.extname(path : Pathname)
+  def self.extname(path : Pathname) : String
     self.extname(path.to_s)
   end
 
-  def self.file?(path : Pathname)
+  def self.file?(path : Pathname) : Bool
     self.file?(path.to_s)
   end
 
@@ -521,11 +521,11 @@ class File
     self.link(old_path.to_s, new_path.to_s)
   end
 
-  def self.lstat(path : Pathname)
+  def self.lstat(path : Pathname) : Stat
     self.lstat(path.to_s)
   end
 
-  def self.open(path : Pathname, mode = "r", perm = DEFAULT_CREATE_MODE, encoding = nil, invalid = nil)
+  def self.open(path : Pathname, mode = "r", perm = DEFAULT_CREATE_MODE, encoding = nil, invalid = nil) : self
     self.open(path.to_s, mode, perm, encoding, invalid)
   end
 
@@ -535,19 +535,19 @@ class File
     end
   end
 
-  def self.read(path : Pathname, encoding = nil, invalid = nil)
+  def self.read(path : Pathname, encoding = nil, invalid = nil) : String
     self.read(path.to_s, encoding, invalid)
   end
 
-  def self.read_lines(path : Pathname, encoding = nil, invalid = nil)
+  def self.read_lines(path : Pathname, encoding = nil, invalid = nil) : Array(String)
     self.read_lines(path.to_s, encoding, invalid)
   end
 
-  def self.readable?(path : Pathname)
+  def self.readable?(path : Pathname) : Bool
     self.readable?(path.to_s)
   end
 
-  def self.real_path(path : Pathname)
+  def self.real_path(path : Pathname) : String
     self.real_path(path.to_s)
   end
 
@@ -563,11 +563,11 @@ class File
     self.rename(old_path.to_s, new_path.to_s)
   end
 
-  def self.size(path : Pathname)
+  def self.size(path : Pathname) : UInt64
     self.size(path.to_s)
   end
 
-  def self.stat(path : Pathname)
+  def self.stat(path : Pathname) : Stat
     self.stat(path.to_s)
   end
 
@@ -583,11 +583,11 @@ class File
     self.symlink(old_path.to_s, new_path.to_s)
   end
 
-  def self.symlink?(path : Pathname)
+  def self.symlink?(path : Pathname) : Bool
     self.symlink?(path.to_s)
   end
 
-  def self.writable?(path : Pathname)
+  def self.writable?(path : Pathname) : Bool
     self.writable?(path.to_s)
   end
 
@@ -611,11 +611,11 @@ class Dir
     end
   end
 
-  def self.entries(path : Pathname)
+  def self.entries(path : Pathname) : Array(String)
     self.entries(path.to_s)
   end
 
-  def self.exists?(path : Pathname)
+  def self.exists?(path : Pathname) : Bool
     self.exists?(path.to_s)
   end
 
@@ -637,7 +637,7 @@ class Dir
     self.new(path.to_s)
   end
 
-  def self.open(path : Pathname)
+  def self.open(path : Pathname) : self
     self.open(path.to_s)
   end
 
